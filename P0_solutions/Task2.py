@@ -24,10 +24,10 @@ September 2016.".
 
 def getLongestCall():
     differentCalls = {}
-    for index in range(1, len(calls)):
+    for index in range(len(calls)):
         callerNumber = calls[index][0]
         receivingNumber = calls[index][1]
-        callDuration = int(calls[0][-1])
+        callDuration = int(calls[index][-1])
 
         if callerNumber in differentCalls:
             differentCalls[callerNumber] += callDuration
@@ -37,14 +37,10 @@ def getLongestCall():
             differentCalls[receivingNumber] += callDuration
         else:
             differentCalls[receivingNumber] = callDuration
-    maxCall = 0
-    num = 0
+    number = max(differentCalls, key=differentCalls.get)
+    longest_call = differentCalls.get(number)
 
-    for item in differentCalls.items():
-        if item[1] > maxCall:
-            maxCall = item[1]
-            num = item[0]
-    print(f"{num} spent the longest time, {maxCall} seconds, on the phone during September 2016.")
+    print(f"{number} spent the longest time, {longest_call} seconds, on the phone during September 2016.")
 
 
 getLongestCall()
