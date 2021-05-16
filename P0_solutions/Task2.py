@@ -40,7 +40,7 @@ def getLongestCall():
     number = max(differentCalls, key=differentCalls.get)
     longest_call = differentCalls.get(number)
 
-    print(f"{number} spent the longest time, {longest_call} seconds, on the phone during September 2016.")
+    print("{0} spent the longest time, {1} seconds, on the phone during September 2016.".format(number, longest_call))
 
 
 getLongestCall()
