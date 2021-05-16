@@ -26,15 +26,25 @@ The list of numbers should be print out one per line in lexicographic order with
 """
 
 
-def printTelemarketerNumbers():
-    print("These numbers could be telemarketers: ")
-    numbers = []
-    for call in calls:
-        if call[0].startswith('140') and call[0] not in numbers:
-            numbers.append(call[0])
-    numbers.sort()
-    for num in numbers:
-        print(num)
+def add_numbers(dataset):
+    for row in dataset:
+        possible_telemarketer.add(row[0])
+        other_numbers.add(row[1])
 
 
-printTelemarketerNumbers()
+def remove_numbers(dataset):
+    for row in dataset:
+        possible_telemarketer.discard(row[0])
+        possible_telemarketer.discard(row[1])
+
+
+possible_telemarketer = set()
+other_numbers = set()
+add_numbers(calls)
+possible_telemarketer = possible_telemarketer.difference(other_numbers)
+remove_numbers(texts)
+numbers = list(possible_telemarketer)
+numbers.sort()
+print("These numbers could be telemarketers: ")
+for num in numbers:
+    print(num)
