@@ -26,7 +26,6 @@ def allDifferentRecords(dataset):
     for row in dataset:
         result.add(row[0])
         result.add(row[1])
-    return len(result)
 
 
 allDifferentRecords(calls)
