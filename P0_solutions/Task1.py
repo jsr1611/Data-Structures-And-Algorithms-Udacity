@@ -19,17 +19,16 @@ Print a message:
 "There are <count> different telephone numbers in the records."
 """
 
+result = set()
+
 
 def allDifferentRecords(dataset):
-    result = []
     for row in dataset:
-        if row[0] not in result:
-            result.append(row[0])
-        if row[1] not in result:
-            result.append(row[1])
+        result.add(row[0])
+        result.add(row[1])
     return len(result)
 
 
-calls.extend(texts)
-num = allDifferentRecords(calls)
-print(f"There are {num} different telephone numbers in the records.")
+allDifferentRecords(calls)
+allDifferentRecords(texts)
+print(f"There are {len(result)} different telephone numbers in the records.")
