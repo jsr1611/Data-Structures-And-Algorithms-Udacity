@@ -22,12 +22,15 @@ Print messages:
 
 
 def getTextRecord(index):
-    msg = f"First record of texts, {texts[index][0]} texts {texts[index][1]} at time {texts[index][-1]}"
+    msg = "First record of texts, {0} texts {1} at time {2}".format(texts[index][0], texts[index][1], texts[index][-1])
     return msg
 
 
 def getCallRecord(index):
-    msg = f"Last record of calls, {calls[index][0]} calls {calls[index][1]} at time {calls[index][2]}, lasting {calls[index][-1]} seconds"
+    msg = "Last record of calls, {0} calls {1} at time {2}, lasting {3} seconds".format(calls[index][0],
+                                                                                        calls[index][1],
+                                                                                        calls[index][2],
+                                                                                        calls[index][-1])
     return msg
 
 
