@@ -20,15 +20,16 @@ Print a message:
 """
 
 
-def allDifferentRecords():
+def allDifferentRecords(dataset):
     result = []
-    for row in calls:
+    for row in dataset:
         if row[0] not in result:
             result.append(row[0])
         if row[1] not in result:
-            result.append(row[1])   
+            result.append(row[1])
     return len(result)
 
 
-num = allDifferentRecords()
+calls.extend(texts)
+num = allDifferentRecords(calls)
 print(f"There are {num} different telephone numbers in the records.")
