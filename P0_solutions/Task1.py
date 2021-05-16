@@ -28,6 +28,6 @@ def allDifferentRecords(dataset):
         result.add(row[1])
 
 
-allDifferentRecords(calls)
-allDifferentRecords(texts)
+allDifferentRecords(calls)      # count unique records in the calls
+allDifferentRecords(texts)      # count unique recoreds in the texts
 print(f"There are {len(result)} different telephone numbers in the records.")
