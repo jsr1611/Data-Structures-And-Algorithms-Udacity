@@ -22,12 +22,12 @@ Print a message:
 result = set()
 
 
-def allDifferentRecords(dataset):
+def all_different_records(dataset):
     for row in dataset:
         result.add(row[0])
         result.add(row[1])
 
 
-allDifferentRecords(calls)      # count unique records in the calls
-allDifferentRecords(texts)      # count unique recoreds in the texts
+all_different_records(calls)      # count unique records in the calls
+all_different_records(texts)      # count unique recoreds in the texts
 print(f"There are {len(result)} different telephone numbers in the records.")
