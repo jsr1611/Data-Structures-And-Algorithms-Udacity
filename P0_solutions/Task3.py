@@ -46,38 +46,38 @@ The percentage should have 2 decimal digits
 """
 
 
-def printAllPrefixes():
+def print_all_prefixes():
     print("The numbers called by people in Bangalore have codes:")
-    callsFromBangalore = []
-    calls_bangalore2bangalore = []
-    bangaloreReceivedCalls_prefixes = []
-    for call in calls:
-        if call[0].startswith("(080)"):
-            callsFromBangalore.append(call)
-            if (call[1].startswith('7') or call[1].startswith('8') or call[1].startswith('9')) and " " in call[1]:
-                prefix = call[1][:4]
-                if prefix not in bangaloreReceivedCalls_prefixes:
-                    bangaloreReceivedCalls_prefixes.append(prefix)
-            elif call[1].startswith("("):
-                st = str(call[1]).find('(') + 1
-                en = call[1].find(')')
-                prefix = call[1][st:en]
-                if prefix not in bangaloreReceivedCalls_prefixes:
-                    bangaloreReceivedCalls_prefixes.append(prefix)
-            elif call[1].startswith("140"):
-                prefix = call[1][:3]
-                bangaloreReceivedCalls_prefixes.append(prefix)
-            if call[1].startswith("(080)"):
-                calls_bangalore2bangalore.append(call[1])
-    bangaloreReceivedCalls_prefixes.sort()
-    for code in bangaloreReceivedCalls_prefixes:
+    calls_from_bangalore = []
+    calls_bangalore_to_bangalore = []
+    bangalore_received_calls_codes = []
+    for row in calls:
+        if row[0].startswith("(080)"):
+            calls_from_bangalore.append(row)
+            if (row[1].startswith('7') or row[1].startswith('8') or row[1].startswith('9')) and " " in row[1]:
+                code = row[1][:4]
+                if code not in bangalore_received_calls_codes:
+                    bangalore_received_calls_codes.append(code)
+            elif row[1].startswith("("):
+                st = str(row[1]).find('(') + 1
+                en = row[1].find(')')
+                code = row[1][st:en]
+                if code not in bangalore_received_calls_codes:
+                    bangalore_received_calls_codes.append(code)
+            elif row[1].startswith("140"):
+                code = row[1][:3]
+                bangalore_received_calls_codes.append(code)
+            if row[1].startswith("(080)"):
+                calls_bangalore_to_bangalore.append(row[1])
+    bangalore_received_calls_codes.sort()
+    for code in bangalore_received_calls_codes:
         print(code)
-    received_len = len(calls_bangalore2bangalore)
-    allCalls_len = len(callsFromBangalore)
-    percentage = (received_len * 100) / allCalls_len
+    received_len = len(calls_bangalore_to_bangalore)
+    all_calls_len = len(calls_from_bangalore)
+    percentage = (received_len * 100) / all_calls_len
 
     print(
         f"{percentage:.2f} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.")
 
 
-printAllPrefixes()
+print_all_prefixes()
